@@ -1,0 +1,239 @@
+@import "mixins/colors.less";
+@import "src/typography.less";
+
+// Buttons
+//
+// Buttons styles to define looks and feel of buttons. It should be noted that
+// the width of buttons is determined by the grid system.
+//
+// Styleguide 3.0
+
+// Primary Button
+//
+//  A primary button is a the combination of the .button and .button-primary
+//  classes. The .button class normalizes behavior while the .button-primary
+//  class adds the primary button color. These classes can be combined with
+//  grid classes to conform to a standard width.
+//
+// markup:
+//  <div class="p2-buttons">
+//   <div class="col-3 inline-block">
+//     <button class="button button-primary p2">Primary Button</button>
+//   </div>
+//   <div class="col-4 inline-block">
+//     <button class="button button-primary-red ml2 p2">Primary Button Red</button>
+//   </div>
+//   <div class="col-3 inline-block">
+//     <button class="button button-primary disabled ml2 p2">Disabled Button</button>
+//   </div>
+// </div>
+// <div class="p1-buttons mt2">
+//   <div class="col-3 inline-block">
+//     <button class="button button-primary p1">Primary Button</button>
+//   </div>
+//   <div class="col-4 inline-block">
+//     <button class="button button-primary-red ml2 p1">Primary Button Red</button>
+//   </div>
+//   <div class="col-3 inline-block">
+//     <button class="button button-primary disabled ml2 p1">Disabled Button</button>
+//   </div>
+// </div>
+// <div class="p1-buttons mt2">
+//   <div class="col-3 inline-block">
+//     <button class="button button-primary p1 f6">Primary Button</button>
+//   </div>
+//   <div class="col-4 inline-block">
+//     <button class="button button-primary-red ml2 p1 f6">Primary Button Red</button>
+//   </div>
+//   <div class="col-3 inline-block">
+//     <button class="button button-primary disabled ml2 p1 f6">Disabled Button</button>
+//   </div>
+// </div>
+//
+// Styleguide 3.1
+
+.button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  font-family: @Oswald;
+  font-size: inherit;
+  font-weight: 400;
+  height: auto;
+  letter-spacing: 0.05rem;
+  line-height: 1.125rem;
+  // padding: .5rem 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: transparent;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: rgba(0,0,0,.125);
+    box-shadow: 0 0 0 3px rgba(0,0,0,.25);
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: .5;
+  }
+} // button
+
+.button-primary {
+  color: @near-white;
+  background-color: @accent-blue;
+  border-radius: 3px;
+  border: 1px solid transparent;
+
+  &:hover {
+    // box-shadow: inset 0 0 0 20rem rgba(0,0,0,.0625);
+    background-color: lighten(@accent-blue, 5%);
+  }
+
+  &:active {
+    box-shadow: inset 0 0 0 20rem rgba(0,0,0,.125),
+      inset 0 3px 4px 0 rgba(0,0,0,.25),
+      inset 0 0 1px rgba(0,0,0,.125);
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 1;
+    background-color: @near-white;
+    border-color: @silver;
+    color: @near-black;
+  }
+} // button primary
+
+.button-primary-red {
+  .button-primary;
+  background-color: @accent-red;
+
+  &:hover {
+    background-color: lighten(@accent-red, 5%);
+  }
+}
+
+// Secondary Button
+//
+// The secondary button is a combination of the .button class, the
+// .button-secondary class, and an optionally an accent color class. Depending
+// on the contenxt, vairous accent colors are appropriate.
+//
+// markup:
+// <button class="button button-secondary accent-blue">Secondary Button Blue</button>
+// <button class="button button-secondary accent-red">Secondary Button Red</button>
+// <button class="button button-secondary">Secondary Button</button>
+// <span class="button-sample col-4">
+//   <button class="button button-secondary white">Secondary Button</button>
+// </span>
+//
+// Styleguide 3.2
+
+.button-secondary {
+  &:hover {
+    color: lighten(@near-black, 20%);
+  }
+
+  &.accent-blue:hover {
+    color: lighten(@accent-blue, 20%);
+  }
+
+  &.accent-red:hover {
+    color: lighten(@accent-red, 20%);
+  }
+
+  &.white:hover {
+    color: @silver;
+  }
+}
+
+// Toggle Button
+//
+// Used for when something needs to be "on" or "off", like a category selection
+// or the visibility of a set
+//
+// markup:
+// <label for="abstract">
+//   <input id="abstract" class="toggle" type="checkbox" name="category-abstract" checked>
+//   <span class="label">Abstract</span>
+// </label>
+// <label for="animals">
+//   <input id="animals" class="toggle" type="checkbox" name="category-animals">
+//   <span class="label">Animals</span>
+// </label>
+// <label for="architecture">
+//   <input id="architecture" class="toggle" type="checkbox" name="category-architecture">
+//   <span class="label">Architecture</span>
+// </label>
+// <label for="celebrities">
+//   <input id="celebrities" class="toggle" type="checkbox" name="category-celebrities">
+//   <span class="label">Celebrities</span>
+// </label>
+// <label for="city">
+//   <input id="city" class="toggle" type="checkbox" name="category-city">
+//   <span class="label">City</span>
+// </label>
+// <label for="commercial">
+//   <input id="commercial" class="toggle" type="checkbox" name="category-commercial">
+//   <span class="label">Commercial</span>
+// </label>
+// <label for="concert">
+//   <input id="concert" class="toggle" type="checkbox" name="category-concert">
+//   <span class="label">Concert</span>
+// </label>
+// <label for="family">
+//   <input id="family" class="toggle" type="checkbox" name="category-family">
+//   <span class="label">Family</span>
+// </label>
+// <label for="fashion">
+//   <input id="fashion" class="toggle" type="checkbox" name="category-fashion">
+//   <span class="label">Fashion</span>
+// </label>
+// <div class="mt2">
+//   <label for="visibility">
+//     <input id="visibility" class="toggle" type="checkbox" name="visibility">
+//     <span class="label">Visible</span>
+//   </label>
+// </div>
+//
+// Styleguide 3.3
+
+.toggle {
+  display: none;
+}
+
+.toggle + .label {
+  background-color: @silver;
+  border-radius: 3px;
+  color: @near-black;
+  cursor: pointer;
+  display: inline-block;
+  .opensans;
+  .f6;
+  padding: .5rem 0.75rem;
+  margin: 0.25rem;
+}
+
+.toggle:checked + .label {
+  background-color: @accent-blue;
+  color: @near-white
+}
+
+.toggle + .label::selection {
+  background-color: transparent;
+}
+.toggle + .label::-moz-selection {
+  background-color: transparent;
+}

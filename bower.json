@@ -1,0 +1,37 @@
+{
+  "name": "components",
+  "version": "0.0.0",
+  "homepage": "http://www.PhotoOp.io",
+  "authors": [
+    "Chris Hicks <chicks@photoop.io>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "install": {
+    "path": {
+      "js": "public/js/vendor",
+      "/[c|les]ss$/": "public/css/vendor"
+    },
+    "sources": {
+      "modernizr": "bower_components/modernizr/modernizr.js",
+      "react" : [
+        "bower_components/react/react-with-addons.js",
+        "bower_components/react/JSXTransformer.js"
+      ]
+    }
+  },
+  "dependencies": {
+    "handlebars": "~3.0.3",
+    "modernizr": "~2.8.3",
+    "normalize.css": "~3.0.3",
+    "react": "~0.13.3",
+    "requirejs": "~2.1.20",
+    "requirejs-react-jsx": "~0.14.2"
+  }
+}

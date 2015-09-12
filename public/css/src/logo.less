@@ -1,0 +1,27 @@
+@import "mixins/viewport.less";
+
+.logo {
+  width: 4rem;
+
+  @media @viewport-medium {
+    width: 5rem;
+  }
+
+  @media @viewport-large,
+         @viewport-x-large {
+    width: 6rem;
+  }
+}
+
+.logo-tiny {
+  width: 2rem;
+}
+
+.logo-small {
+  width: 3rem;
+}
+
+.logo .logo-image,
+.logo img {
+  width: 100%;
+}

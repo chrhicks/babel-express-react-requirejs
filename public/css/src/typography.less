@@ -1,0 +1,198 @@
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/opensans-light-webfont.eot');
+    src: url('/fonts/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/opensans-light-webfont.woff2') format('woff2'),
+         url('/fonts/opensans-light-webfont.woff') format('woff'),
+         url('/fonts/opensans-light-webfont.ttf') format('truetype'),
+         url('/fonts/opensans-light-webfont.svg#open_sanslight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/opensans-regular-webfont.eot');
+    src: url('/fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/opensans-regular-webfont.woff2') format('woff2'),
+         url('/fonts/opensans-regular-webfont.woff') format('woff'),
+         url('/fonts/opensans-regular-webfont.ttf') format('truetype'),
+         url('/fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('/fonts/oswald-bold-webfont.eot');
+    src: url('/fonts/oswald-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/oswald-bold-webfont.woff2') format('woff2'),
+         url('/fonts/oswald-bold-webfont.woff') format('woff'),
+         url('/fonts/oswald-bold-webfont.ttf') format('truetype'),
+         url('/fonts/oswald-bold-webfont.svg#oswaldbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('/fonts/oswald-regular-webfont.eot');
+    src: url('/fonts/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/oswald-regular-webfont.woff2') format('woff2'),
+         url('/fonts/oswald-regular-webfont.woff') format('woff'),
+         url('/fonts/oswald-regular-webfont.ttf') format('truetype'),
+         url('/fonts/oswald-regular-webfont.svg#oswaldregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+// Typography
+//
+//  The font faces we use site wide
+//
+// Styleguide 2.0
+
+// Font Face variables
+//
+//  Fonts used to mixin to utility classes and form foundation classes
+//
+// @Oswald - Oswald font for Headings
+// @OpenSans - for body and copy
+//
+// markup:
+// <div style="font-family: {$modifiers};" class="styleguide-font-face">{$modifiers}</div>
+//
+// Styleguide 2.1
+
+@Oswald: 'Oswald', sans-serif;
+@OpenSans: 'Open Sans', sans-serif;
+
+// Font Face foundation classes
+//
+// Classes used to apply fonts to elements or used as mixins
+//
+// .oswald - Oswald Regular weight 400
+// .oswald-bold - Oswald Bold weight 700
+// .opensans - Open Sans Regular weight 400
+// .opensans-light - Open Sans Light weight 300
+//
+// markup:
+// <div class="{$modifiers} f2">
+//  Lorem ipsum dolor sit amet
+// </div>
+//
+// Styleguide 2.2
+
+.oswald {
+  font-family: @Oswald, Verdana, Geneva, sans-serif;
+  font-weight: 400;
+}
+
+.oswald-bold {
+  font-family: @Oswald, Verdana, Geneva, sans-serif;
+  font-weight: 700;
+}
+
+.opensans {
+  font-family: @OpenSans, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.opensans-light {
+  font-family: @OpenSans, Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+// Type System
+//
+// markup:
+// <div class="f1 oswald border-bottom m1 py1">Font Size 1 -- 4 rem ~ 64px</div>
+// <div class="f2 oswald border-bottom m1 py1">Font Size 2 -- 3 rem ~ 48px</div>
+// <div class="f3 oswald border-bottom m1 py1">Font Size 3 -- 1.5 rem ~ 24px</div>
+// <div class="f4 opensans border-bottom m1 py1">Font Size 4 -- 1.125 rem ~ 18px</div>
+// <div class="f5 opensans border-bottom m1 py1">Font Size 5 -- 1 rem ~ 16px</div>
+// <div class="f6 opensans border-bottom m1 py1">Font Size 6 -- .875 rem ~ 14px</div>
+//
+// Styleguide 2.3
+
+.f1 { font-size: 4rem; }          // 64px
+.f2 { font-size: 3rem; }          // 48px
+.f3 { font-size: 1.5rem; }        // 24px
+.f4 { font-size: 1.125rem; }      // 18px
+.f5 { font-size: 1rem; }          // 16px
+.f6 { font-size: 0.875rem; }       // 14px
+
+// Type Style Classes
+//
+//  These classes can be added to DOM elements or mixed in to other styles.
+//  Headings are independant of font size as the type system classes can be
+//  applided, but the body copy classes have font sizes mixed in to pair with
+//  thier line heights.
+//
+// Styleguide 2.4
+
+//
+// Headings
+//
+// Headings utilize the class <code>.heading</code> and can be paired with other font size,
+// margin, padding, and other utility classes.
+//
+// markup:
+// <div class="heading f1">Heading</div>
+//
+// Styleguide 2.4.1
+.heading {
+  font-family: @Oswald;
+  font-weight: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+//
+//  Body Copy Classes
+//
+//  Body copy classes are meant to be used on elements that contain text only
+//  and have one or more paragraphs.
+//
+//  markup:
+//  <div class="border-bottom mb1 py1">
+//    <code>.large-copy</code>
+//  </div>
+//  <div class="large-copy opensans">
+//    <p>Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+//    <p>Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+//  </div>
+//  <div class="border-bottom mb1 py1">
+//    <code>.copy</code>
+//  </div>
+//  <div class="copy opensans">
+//    <p>Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+//    <p>Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+//  </div>
+//  <div class="border-bottom mb1 py1">
+//    <code>.petite-copy</code>
+//  </div>
+//  <div class="petite-copy opensans">
+//    <p>Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+//    <p>Aenean lacinia bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+//  </div>
+//
+//  Styleguide 2.4.2
+.large-copy {
+  .f4;
+  line-height: 1.625rem;
+  margin-bottom: 1.125rem;
+}
+
+.copy {
+  .f5;
+  line-height: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.petite-copy {
+  .f6;
+  line-height: 1.375rem;
+  margin-bottom: 0.625rem;
+}

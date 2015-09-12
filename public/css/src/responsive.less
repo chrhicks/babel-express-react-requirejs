@@ -1,0 +1,62 @@
+@import "mixins/viewport.less";
+
+//
+//  Responsive show and hide based on breakpoint. Based off of
+//  basscss system, but using PhotoOp breakpoints and conventions
+//
+
+.tiny-show,
+.small-show,
+.medium-show,
+.large-show,
+.x-large-show {
+  display: none !important;
+}
+
+//
+//  Breakpoints show
+//
+@media @viewport-tiny {
+  .tiny-show { display: block !important }
+}
+@media @viewport-small {
+  .small-show { display: block !important }
+}
+@media @viewport-medium {
+  .medium-show { display: block !important }
+}
+@media @viewport-large {
+  .large-show { display: block !important }
+}
+@media @viewport-x-large {
+  .x-large-show { display: block !important }
+}
+
+//
+// Breakpoints hide
+//
+@media @viewport-tiny {
+  .tiny-hide { display: none !important }
+}
+@media @viewport-small {
+  .small-hide { display: none !important }
+}
+@media @viewport-medium {
+  .medium-hide { display: none !important }
+}
+@media @viewport-large {
+  .large-hide { display: none !important }
+}
+@media @viewport-x-large {
+  .x-large-hide { display: none !important }
+}
+
+.display-none { display: none !important }
+
+.hide {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}

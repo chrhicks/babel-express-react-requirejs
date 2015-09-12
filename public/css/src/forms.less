@@ -1,0 +1,258 @@
+@import "mixins/colors.less";
+@import "src/typography.less";
+
+// Forms
+//
+// Form fields for Photo Op
+//
+// Styleguide 4.0
+ ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:  @light-gray;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color:  @light-gray;
+ opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color:  @light-gray;
+ opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color:  @light-gray;
+}
+
+@accent-red-rgb: "208, 2, 27";
+
+.field {
+  .opensans;
+  border-style: solid;
+  border-width: 1px;
+  border-color: @light-gray;
+  border-radius: 5px;
+  color: @near-black;
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+
+  transition: all 0.25s ease-in;
+}
+
+.field:focus,
+.field.is-focused,
+.field:invalid:focus,
+.field.is-warning:focus {
+  outline: none;
+  border-color: @accent-blue;
+  box-shadow: 0 0 2px 1px fade(@accent-blue, 25%);
+}
+
+.field:disabled,
+.field.is-disabled {
+  background-color: @near-white;
+  opacity: .5;
+}
+
+.field:read-only:not(select),
+.field.is-read-only {
+  background-color: @near-white;
+}
+
+.field.is-success {
+  border-color: @accent-blue;
+}
+
+.field:invalid,
+.field.is-warning {
+  background-color: fade(@required-yellow, 10%);
+}
+
+.field.is-error {
+  border-color: @accent-red;
+}
+
+.field.is-error:focus,
+.field.is-error.is-focused {
+  box-shadow: 0 0 2px 1px fade(@accent-red, 25%);
+}
+
+.field.is-error::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:  @black;
+}
+.field.is-error:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color:  @black;
+ opacity:  1;
+}
+.field.is-error::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color:  @black;
+ opacity:  1;
+}
+.field.is-error:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color:  @black;
+}
+
+//  Text Inputs
+//
+//  Examples of input types text, email, and password in states default, disabled,
+//  read-only, required, and simulated error
+//
+// markup:
+// <form class="mt3 col-3">
+//   <input type="text" name="text" class="block col-12 mb1 field" placeholder="Text Field">
+//   <input type="text" name="disabled" class="block col-12 mb1 field" placeholder="Disabled Field" disabled>
+//   <input type="text" name="read-only" class="block col-12 mb1 field" value="Read Only Field" readonly>
+//   <input type="text" name="required" class="block col-12 mb1 field" placeholder="Required Field" required>
+//   <input type="text" name="errored" class="block col-12 mb1 field is-error" placeholder="Error Field">
+//   <input type="email" name="email" class="block col-12 mb1 field" placeholder="Email Field">
+//   <input type="password" name="password" class="block col-12 mb1 field" placeholder="Password Field">
+// </form>
+//
+// Styleguide 4.1.0
+
+// Text box with prefix
+//
+// a prefix pill for a text input
+//
+// markup:
+// <form class="mt3 col-6">
+//   <label for="text" class="opensans"> Prefixed Input Label
+//     <div class="prefix mt2 mb2 col-12" data-prefix="photoop.io/p/">
+//       <input type="text" name="text" class="mb1 field inline-block" placeholder="my-site-url">
+//     </div>
+//   </label>
+// </form>
+//
+// Styleguide 4.2.0
+.prefix {
+  min-width: 25rem;
+}
+.prefix::before {
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  content: attr(data-prefix) " ";
+  .opensans;
+  height: 2.5rem;
+  line-height: normal;
+  padding: .5rem 1rem;
+  margin-right: -1px;
+}
+
+.prefix input.field {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 2.5rem;
+  margin-left: -0.25rem;
+  margin-top: 0.25rem;
+}
+
+// Select
+//
+// Select boxes
+//
+// markup:
+// <form class="mt3 col-3">
+//   <select name="select" class="field block col-12 mb1">
+//     <option value="select-option-1">Option 1</option>
+//     <option value="select-option-2">Option 2</option>
+//     <option value="select-option-3">Option 3</option>
+//   </select>
+// </form>
+//
+// Styleguide 4.3.0
+select.field {
+  background-color: @white;
+}
+
+// Seamless Input
+//
+// An input that fades into it's surrounding layout
+//
+// markup:
+// <form class="mt3">
+//   <input type="text" name="seamless" class="block col-12 mb1 seamless f1" placeholder="Seamless Input">
+//   <input type="text" name="seamless" class="block col-12 mb1 seamless f2" placeholder="Seamless Input">
+//   <input type="text" name="seamless" class="block col-12 mb1 seamless f3" placeholder="Seamless Input">
+//   <input type="text" name="seamless" class="block col-12 mb1 seamless" placeholder="Seamless Input">
+//  </form>
+//
+//  Styleguide 4.4.1
+
+input.seamless::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:  @dark-gray;
+}
+input.seamless:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color:  @dark-gray;
+ opacity:  1;
+}
+input.seamless::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color:  @dark-gray;
+ opacity:  1;
+}
+input.seamless:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color:  @dark-gray;
+}
+
+input.seamless {
+  border-color: transparent;
+  border-width: 0 0 3px 0;
+  font-family: "Oswald", sans-serif;
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+}
+
+input.seamless:focus {
+  border-color: @near-black;
+  border-width: 0 0 3px 0;
+  box-shadow: none;
+  outline: none;
+}
+
+input.seamless.f1 {
+  height: 6.5rem;
+  padding: 1rem 1rem 0 1rem;
+}
+
+input.seamless.f2 {
+  height: 5rem;
+  padding: 1rem 1rem 0 1rem;
+}
+
+input.seamless.f3 {
+  height: 2.5rem;
+  padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+}
+
+// Seamless Textarea
+//
+// A textarea that fades into it's surrounding layout
+//
+// markup:
+// <form class="mt3">
+//   <textarea
+//     class="seamless"
+//     name="some-textarea"
+//     id="duh-textarea"
+//     cols="30"
+//     rows="10"
+//     placeholder="Placeholder text"></textarea>
+//  </form>
+//
+//  Styleguide 4.4.2
+textarea.seamless {
+  border-color: transparent @light-gray transparent @light-gray;
+  border-style: solid;
+  border-width: 1px;
+  color: @near-black;
+  .opensans;
+  outline: none;
+  resize: none;
+  width: 30%
+}
+
+textarea.seamless:focus {
+  // background-color: #eee;
+  border-color: @near-black;
+  outline: none;
+}

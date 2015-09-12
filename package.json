@@ -1,0 +1,27 @@
+{
+  "name": "components",
+  "version": "0.0.1",
+  "description": "Proving ground / sandbox / documentation for Photo Op components",
+  "main": "server.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "chicks@photoop.io",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-less": "^3.0.2",
+    "gulp-nodemon": "^2.0.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-util": "^3.0.4",
+    "require-dir": "^0.3.0",
+    "requirejs": "^2.1.18"
+  },
+  "dependencies": {
+    "express": "^4.12.4",
+    "handlebars": "^3.0.3",
+    "hbs": "^3.1.0",
+    "react": "^0.13.3"
+  }
+}

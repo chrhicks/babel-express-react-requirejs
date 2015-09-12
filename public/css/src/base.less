@@ -1,0 +1,61 @@
+@import "mixins/colors.less";
+@import "src/typography.less";
+
+body {
+  background-color: @near-white;
+  color: @near-black;
+  .opensans;
+  line-height: 1.5;
+  font-size: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: @accent-blue;
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  .oswald;
+  line-height: 1.25;
+  margin-top: 1em;
+  margin-bottom: .5em;
+}
+
+hr {
+  border: 0;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: @light-gray;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+dl, ol, ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+pre, code, samp {
+  font-family: 'Source Code Pro', Consolas, monospace;
+  font-size: inherit;
+}
+
+pre, code {
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+pre {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow-x: scroll;
+}

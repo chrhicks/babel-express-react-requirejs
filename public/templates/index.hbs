@@ -1,0 +1,18 @@
+{{#extend "stylesheets"}}
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:300,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/dist/index.css">
+{{/extend}}
+
+<div id="main-content">{{{buttonHtml}}}</div>
+
+
+{{#extend "scripts"}}
+  <script src="/js/vendor/requirejs/require.js"></script>
+  <script>
+  requirejs(['/js/config.js'], function () {
+    requirejs(['index'], function (index) {
+      index.init();
+    });
+  });
+  </script>
+{{/extend}}

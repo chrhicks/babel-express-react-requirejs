@@ -1,0 +1,20 @@
+{
+  "baseUrl": "public/js",
+  "dir": "public/js/dist",
+  "mainConfigFile": "public/js/config.js",
+  "optimize": "uglify2",
+  "generateSourceMaps": true,
+  "preserveLicenseComments": false,
+  "modules": [
+    {
+      "name": "index",
+      "insertRequire": ["index"],
+      "include": ["vendor/requirejs/require"]
+    },
+    {
+      "name": "portfolio",
+      "insertRequire": ["portfolio"],
+      "include": [ "vendor/requirejs/require" ]
+    }
+  ]
+}
